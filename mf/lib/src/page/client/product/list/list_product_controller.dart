@@ -24,4 +24,16 @@ class ClientProductsListController {
   void openDrawer() {
     key.currentState.openDrawer();
   }
+
+  void gouToRoles() {
+    Navigator.pushNamedAndRemoveUntil(context, 'roles', (route) => false);
+  }
+
+  void goToUpdatePage() {
+    Navigator.pushNamed(context, 'client/update');
+  }
+
+  void gouToDelivery() {
+    Navigator.pushNamed(context, 'delivery/orders/list');
+  }
 }

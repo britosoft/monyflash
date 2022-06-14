@@ -58,6 +58,14 @@ class _ClientProductListPageState extends State<ClientProductListPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  CircleAvatar(
+                    minRadius: 30.0,
+                    maxRadius: 40.0,
+                    child: ClipRRect(),
+                    backgroundImage: _con.user?.image != null
+                        ? NetworkImage(_con.user?.image)
+                        : AssetImage('assets/imagenes/no-image.jpg'),
+                  ),
                   Text(
                     '${_con.user?.name ?? ''} ${_con.user?.lastname ?? ''}',
                     style: TextStyle(
@@ -84,36 +92,42 @@ class _ClientProductListPageState extends State<ClientProductListPage> {
                         fontStyle: FontStyle.italic),
                     maxLines: 1,
                   ),
-                  Container(
-                    height: 60,
-                    margin: EdgeInsets.only(top: 10),
-                    child: FadeInImage(
-                      image: _con.user?.image != null
-                          ? NetworkImage(_con.user?.image)
-                          : AssetImage('assets/imagenes/no-image.jpg'),
-                      fit: BoxFit.contain,
-                      fadeInDuration: Duration(milliseconds: 50),
-                      placeholder: AssetImage('assets/imagenes/no-image.jpg'),
-                    ),
-                  )
                 ],
               )),
           ListTile(
-            //onTap: _con.goToUpdatePage,
+            onTap: _con.goToUpdatePage,
             title: Text(
               'Editar perfil',
               style: TextStyle(color: Colors.white),
             ),
-            trailing: Icon(Icons.edit_outlined),
+            trailing: Icon(
+              Icons.edit_outlined,
+              color: Colors.white,
+            ),
           ),
-          Container(),
+          _con.user != null
+              ? _con.user.roles.length > 1
+                  ? ListTile(
+                      onTap: _con.gouToRoles,
+                      title: Text('Seleccionar rol',
+                          style: TextStyle(color: Colors.white)),
+                      trailing: Icon(
+                        Icons.person_outline,
+                        color: Colors.white,
+                      ),
+                    )
+                  : Container()
+              : Container(),
           ListTile(
             onTap: _con.logout,
             title: Text(
               'Cerrar sesion',
               style: TextStyle(color: Colors.white),
             ),
-            trailing: Icon(Icons.power_settings_new),
+            trailing: Icon(
+              Icons.power_settings_new,
+              color: Colors.white,
+            ),
           ),
         ],
       ),

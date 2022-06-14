@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mf/src/page/boutique/orders/list/boutique_orders_list_page.dart';
 import 'package:mf/src/page/client/product/list/list_product.dart';
+import 'package:mf/src/page/client/update/client_update.dart';
 import 'package:mf/src/page/delivery/orders/list/delivery_orders_list_page.dart';
 import 'package:mf/src/page/login/login_page.dart';
 import 'package:mf/src/page/models/rol.dart';
@@ -35,7 +36,8 @@ class _MyAppState extends State<MyApp> {
             BoutiqueOdersListPage(),
         'delivery/orders/list': (BuildContext context) =>
             DeliveryOdersListPage(),
-        'roles': (BuildContext context) => Roles()
+        'roles': (BuildContext context) => Roles(),
+        'client/update': (BuildContext context) => ClientUpdatePage()
       },
     );
   }

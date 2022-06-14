@@ -51,7 +51,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _logo() {
     return Container(
-      child: Image.asset('assets/imagenes/mf.jpg', fit: BoxFit.fill),
+      child: Image.asset(
+        'assets/imagenes/mf.jpg',
+        fit: BoxFit.fill,
+        width: 250,
+        height: 250,
+      ),
     );
   }
 

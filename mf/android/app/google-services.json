@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "893062730607",
+    "project_id": "monyflash-94e68",
+    "storage_bucket": "monyflash-94e68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893062730607:android:c116eb88ee0c5269800e9a",
+        "android_client_info": {
+          "package_name": "com.example.mf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893062730607-1b9i63nd0ju0nhgg0boqm2uokfncdno6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mf",
+            "certificate_hash": "ffc9610e92a65e682cdde8ad66523bc6db80ced8"
+          }
+        },
+        {
+          "client_id": "893062730607-dvvk69iifn2751hiu7s12h7ffhijseva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeQIHtDyM5SOHI-IlIl6Qf65KonHrPsSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893062730607-dvvk69iifn2751hiu7s12h7ffhijseva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

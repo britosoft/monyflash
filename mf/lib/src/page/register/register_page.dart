@@ -22,7 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
     super.initState();
 
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      _con.init(context);
+      _con.init(context, refresh);
     });
   }
 
@@ -39,6 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
         children: [
           _logo(),
+          _imageUser(),
           _textRegister(),
           _textFieldEmailRegister(),
           _textFieldPasswordRegister(),
@@ -52,7 +53,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _logo() {
     return Container(
-      child: Image.asset('assets/imagenes/mf.jpg', fit: BoxFit.fill),
+      child: Image.asset(
+        'assets/imagenes/semaforo.png',
+        fit: BoxFit.fill,
+        width: 250,
+        height: 250,
+      ),
     );
   }
 
@@ -173,5 +179,22 @@ class _RegisterPageState extends State<RegisterPage> {
             padding: EdgeInsets.symmetric(vertical: 15)),
       ),
     );
+  }
+
+  Widget _imageUser() {
+    return GestureDetector(
+      onTap: _con.showAlertDialog,
+      child: CircleAvatar(
+        backgroundImage: _con.imageFile != null
+            ? FileImage(_con.imageFile)
+            : AssetImage('assets/imagenes/mf.jpg'),
+        radius: 60,
+        backgroundColor: Colors.grey[200],
+      ),
+    );
+  }
+
+  void refresh() {
+    setState(() {});
   }
 }
